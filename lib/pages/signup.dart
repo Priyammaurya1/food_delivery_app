@@ -69,7 +69,7 @@ class _SignUpState extends State<SignUp> {
                         children: [
                           SizedBox(height: 30),
                           Text(
-                            'SignUp',
+                            'Sign Up',
                             style: AppWidget.headlineTextFeildStyle(),
                           ),
                           SizedBox(height: 30),
@@ -110,14 +110,6 @@ class _SignUpState extends State<SignUp> {
                               prefixIcon: Icon(Icons.password_outlined),
                             ),
                           ),
-                          SizedBox(height: 30),
-                          Container(
-                            alignment: Alignment.topRight,
-                            child: Text(
-                              'Forgot Password?',
-                              style: AppWidget.semiBoldTextFeildStyle(),
-                            ),
-                          ),
                           SizedBox(height: 90),
                           Material(
                             elevation: 5,
@@ -132,7 +124,7 @@ class _SignUpState extends State<SignUp> {
                               child: 
                             Center(
                               child: Text(
-                                'SIGNUP',
+                                'SIGN UP',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
