@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:food_delivery_app/widgets/widget_support.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _LoginState extends State<Login> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +60,7 @@ class _LoginState extends State<Login> {
                     child: Container(
                       padding: EdgeInsets.only(left: 20, right: 20),
                       width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 2.2,
+                      height: MediaQuery.of(context).size.height / 1.5,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
@@ -68,17 +69,38 @@ class _LoginState extends State<Login> {
                         children: [
                           SizedBox(height: 30),
                           Text(
-                            'Login',
+                            'SignUp',
                             style: AppWidget.headlineTextFeildStyle(),
                           ),
                           SizedBox(height: 30),
                           TextField(
                             decoration: InputDecoration(
+                              hintText: "Name",
+                              hintStyle: AppWidget.semiBoldTextFeildStyle(),
+                              prefixIcon: Icon(Icons.person_2_outlined),
+                            ),
+                          ),
+                          SizedBox(height: 30),
+                            TextField(
+                            decoration: InputDecoration(
                               hintText: "Email",
                               hintStyle: AppWidget.semiBoldTextFeildStyle(),
                               prefixIcon: Icon(Icons.email_outlined),
                             ),
-                          ),
+                            ),
+                            SizedBox(height: 30),
+                            TextField(
+                            keyboardType: TextInputType.phone,  // Set the keyboard type
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly, // Allow only digits
+                              LengthLimitingTextInputFormatter(10),  // Limit to 10 digits
+                            ],
+                            decoration: InputDecoration(
+                              hintText: "Phone Number",
+                              hintStyle: AppWidget.semiBoldTextFeildStyle(),
+                              prefixIcon: Icon(Icons.phone_android_outlined),
+                            ),
+                            ),
                           SizedBox(height: 30),
                           TextField(
                             obscureText: true,
@@ -96,7 +118,7 @@ class _LoginState extends State<Login> {
                               style: AppWidget.semiBoldTextFeildStyle(),
                             ),
                           ),
-                          SizedBox(height: 80),
+                          SizedBox(height: 90),
                           Material(
                             elevation: 5,
                             borderRadius: BorderRadius.circular(20),
@@ -110,7 +132,7 @@ class _LoginState extends State<Login> {
                               child: 
                             Center(
                               child: Text(
-                                'LOGIN',
+                                'SIGNUP',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
@@ -127,7 +149,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   SizedBox(height: 80),
-                          Text('Don\'t have an account? Sign up',
+                          Text('Already have an account? Login',
                           style: AppWidget.semiBoldTextFeildStyle(),
                           ),
                 ],
